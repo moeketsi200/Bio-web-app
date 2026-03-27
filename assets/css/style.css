@@ -180,6 +180,44 @@ nav ul li a:hover {
   }
 }
 
+/* Skills Ticker Line */
+.skills-ticker {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(0, 255, 213, 0.05); /* Subtle neon background */
+  border-top: 1px solid rgba(0, 255, 213, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 213, 0.2);
+  padding: 15px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-ticker 20s linear infinite;
+}
+
+.ticker-track span {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 15px;
+}
+
+.ticker-track span.dot {
+  color: #00ffd5;
+  font-size: 18px;
+}
+
+@keyframes scroll-ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* About Section */
 .about-section {
   padding: 80px 60px;

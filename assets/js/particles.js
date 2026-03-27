@@ -12,11 +12,15 @@ let cubesArray = [];
 const numberOfCubes = 15; // Number of cubes on screen
 let starsArray = [];
 const numberOfStars = 200; // Number of stars in the background
+let moonsArray = []; // Array to hold multiple moons
+const numberOfMoons = 4; // Number of different moons
 
 // Geometric Core properties
 const core = {
     x: canvas.width / 2,
     y: canvas.height / 2,
+    speedX: 0.8, // Horizontal drift speed
+    speedY: 0.6, // Vertical drift speed
     baseSize: 25,
     size: 25,
     sides: 6, // A hexagon
@@ -32,6 +36,83 @@ window.addEventListener('resize', function() {
     core.y = canvas.height / 2;
     init();
 });
+
+class Moon {
+    constructor() {
+        this.size = Math.random() * 15 + 10; // Smaller radius: between 10 and 25
+        // Start at a random position, fully inside the canvas
+        this.x = Math.random() * (canvas.width - this.size * 2) + this.size;
+        this.y = Math.random() * (canvas.height - this.size * 2) + this.size;
+        // Varying slow drifting speeds
+        this.speedX = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 0.2 + 0.05);
+        this.speedY = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 0.2 + 0.05);
+        
+        // Use the site's main highlight color
+        this.color = '#00ffd5';
+        
+        // Randomly choose a moon phase and a tilt angle
+        const phases = ['full', 'half', 'crescent', 'gibbous'];
+        this.phase = phases[Math.floor(Math.random() * phases.length)];
+        this.rotationAngle = Math.random() * Math.PI * 2; // Random rotation
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Gently bounce off the edges of the screen
+        if (this.x < this.size || this.x > canvas.width - this.size) this.speedX *= -1;
+        if (this.y < this.size || this.y > canvas.height - this.size) this.speedY *= -1;
+    }
+
+    draw() {
+        ctx.save();
+        
+        // Translate context to the moon's position so we can rotate the phase shape
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotationAngle);
+        
+        // Create a radial gradient (now relative to 0,0 since we translated)
+        const gradient = ctx.createRadialGradient(
+            -this.size / 3, -this.size / 3, this.size / 10, 
+            0, 0, this.size
+        );
+        
+        // Parse hex color to RGB for the fade-out edge
+        let r = parseInt(this.color.slice(1, 3), 16);
+        let g = parseInt(this.color.slice(3, 5), 16);
+        let b = parseInt(this.color.slice(5, 7), 16);
+        
+        gradient.addColorStop(0, '#ffffff'); // Bright white center
+        gradient.addColorStop(0.6, this.color); // Neon mid-tone
+        gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`); // Fade out edge
+
+        ctx.beginPath();
+        
+        // Draw the specific moon phase shape
+        if (this.phase === 'full') {
+            ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+        } else if (this.phase === 'half') {
+            ctx.arc(0, 0, this.size, -Math.PI / 2, Math.PI / 2);
+            ctx.lineTo(0, -this.size); // Straight line back to top
+        } else if (this.phase === 'crescent') {
+            ctx.arc(0, 0, this.size, -Math.PI / 2, Math.PI / 2);
+            ctx.quadraticCurveTo(this.size * 0.5, 0, 0, -this.size); // Inward curve
+        } else if (this.phase === 'gibbous') {
+            ctx.arc(0, 0, this.size, -Math.PI / 2, Math.PI / 2);
+            ctx.quadraticCurveTo(-this.size * 0.5, 0, 0, -this.size); // Outward curve
+        }
+        
+        ctx.fillStyle = gradient;
+        
+        // Add an external neon glow
+        ctx.shadowBlur = 20; // Slightly reduced glow for smaller moons
+        ctx.shadowColor = this.color;
+        
+        ctx.fill();
+        ctx.restore();
+    }
+}
 
 class Star {
     constructor() {
@@ -195,9 +276,22 @@ function init() {
     for (let i = 0; i < numberOfStars; i++) {
         starsArray.push(new Star());
     }
+    
+    moonsArray = [];
+    for (let i = 0; i < numberOfMoons; i++) {
+        moonsArray.push(new Moon());
+    }
 }
 
 function drawCore() {
+    // Move the core around the screen
+    core.x += core.speedX;
+    core.y += core.speedY;
+
+    // Bounce the core off the edges of the screen
+    if (core.x < 30 || core.x > canvas.width - 30) core.speedX *= -1;
+    if (core.y < 30 || core.y > canvas.height - 30) core.speedY *= -1;
+
     // Update core animation
     core.rotation += 0.005;
     core.pulse += 0.02;
@@ -232,6 +326,12 @@ function animate() {
     for (let i = 0; i < starsArray.length; i++) {
         starsArray[i].update();
         starsArray[i].draw();
+    }
+    
+    // Draw and update all the different moons
+    for (let i = 0; i < moonsArray.length; i++) {
+        moonsArray[i].update();
+        moonsArray[i].draw();
     }
 
     drawCore();
