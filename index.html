@@ -4,86 +4,285 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moeketsi Isaac Rooi Motloung - Web Designer</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
+  <canvas id="particle-canvas"></canvas>
+
   <header>
     <nav>
-<div class="logo">MOEKETSI <span class="highlight">MOTLOUNG</span></div>
+      <div class="logo">MOEKETSI <span class="highlight">MOTLOUNG</span></div>
       <ul>
-<li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-<div class="Banner-wrap">
-  <div class="content">
-    <h1>Hello, It's <span>Moeketsi Motloung</span></h1>
-    <p>I'm a <span class="highlight slideshow-text">Web Designer</span></p>
-    <div class="buttons">
-      <a href="cv.html" class="btn">Download CV</a>
-      <a href="contact.html" class="btn">Hire Me</a>
-    </div>
-  </div>
-</div>
-        <a href="contact.html" class="btn-outline">Contact</a>
+  <main>
+    <!-- Home / Hero Section -->
+    <section id="home" class="hero">
+      <div class="text">
+        <h1>Hello, It's <span>Moeketsi Motloung</span></h1>
+        <p>I'm a <span class="highlight slideshow-text">Web Designer</span></p>
+        <div class="buttons">
+          <a href="#cv" class="btn">Download CV</a>
+          <a href="#contact" class="btn-outline">Hire Me</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/moeketsi200" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+        </div>
       </div>
-      <div class="socials">
-        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/moeketsi200"><i class="fab fa-github"></i></a>
-        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-        <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
+      <div class="image">
+        <img src="assets/images/Rooi.jpeg" alt="Moeketsi Motloung" />
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h1>About <span class="highlight">Me</span></h1>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="assets/images/Moeketsi.jpeg" alt="Moeketsi Motloung">
+        </div>
+        <div class="about-text">
+          <p>
+            My name is Moeketsi Isaac Rooi Motloung, an aspiring Web Designer and Developer based in George, Western Cape. I am currently pursuing a qualification in Tourism Management at Nelson Mandela University, where I have developed a strong foundation in both academic theory and practical application.
+          </p>
+          <p>
+            In addition to my academic pursuits, I am employed part-time at TFG (Sportscene), where I have cultivated valuable skills in customer service, communication, and teamwork. My background in tourism is complemented by hands-on experience in web development, with proficiency in HTML, CSS, JavaScript, and various web development tools.
+          </p>
+          <p>I am passionate about leveraging creativity and technology to design meaningful and user-focused digital experiences. I am eager to contribute to projects that allow me to merge my technical abilities with my interest in innovation and design.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <h1>My <span class="highlight">Skills</span></h1>
+      <div class="skills-grid">
+        <div class="skill-box service-card">
+          <i class="fab fa-html5"></i>
+          <h3>HTML</h3>
+          <p>Proficient in semantic and accessible HTML5 markup for building structured web content.</p>
+        </div>
+        <div class="skill-box service-card">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS</h3>
+          <p>Experienced with responsive layouts, animations, Flexbox, and Grid for visually appealing designs.</p>
+        </div>
+        <div class="skill-box service-card">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+          <p>Capable of enhancing interactivity and building dynamic web pages using vanilla JavaScript.</p>
+        </div>
+        <div class="skill-box service-card">
+          <i class="fas fa-lock"></i>
+          <h3>Cybersecurity Basics</h3>
+          <p>Familiar with fundamental security concepts, best practices, and website protection techniques.</p>
+        </div>
+        <div class="skill-box service-card">
+          <i class="fas fa-code"></i>
+          <h3>Version Control</h3>
+          <p>Basic knowledge of Git and GitHub for collaborative code management and version tracking.</p>
+        </div>
+        <div class="skill-box service-card">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Communication</h3>
+          <p>Strong verbal and written communication developed through work and academic experience.</p>
+        </div>
+        <div class="skill-box service-card">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+          <p>Proficient in Python for backend development, scripting, and data handling.</p>
+        </div>
+        <div class="skill-box service-card">
+          <i class="fab fa-react"></i>
+          <h3>React</h3>
+          <p>Building modern, interactive, and component-based user interfaces with the React library.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+      <h1>My <span class="highlight">Projects</span></h1>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="assets/images/clock.jpg" alt="Clock_Project" />
+          <h3>Personal Clock_Project</h3>
+          <p>A responsive and interactive digital clock project built with HTML, CSS, and JavaScript, showcasing real-time updates and a clean design.</p>
+          <a href="https://moeketsi200.github.io/Rooi_-clock/" class="btn-outline" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="assets/images/Iphone.jpg" alt="Iphone_calculator_clone" />
+          <h3>IPhone Calculator Clone</h3>
+          <p>A sleek and fully functional replica of the Apple iPhone calculator, built using HTML, CSS, and JavaScript. Designed to mimic the real UI with smooth interactions and accurate calculations.</p>
+          <a href="https://moeketsi200.github.io/IPhone_Calculator_Clone/" class="btn-outline" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="assets/images/zoo.jpg" alt="Zoo App FNB" />
+          <h3>Zoo App FNB</h3>
+          <p>A clean and interactive zoo-themed application showcasing animals, categories, and user-friendly navigation. Built with HTML, CSS, and JavaScript for a smooth and responsive experience.</p>
+          <a href="https://moeketsi200.github.io/Zoo-App_FNB/" class="btn-outline" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <img src="assets/images/Tesla.jpg" alt="Tesla Website Screenshot" />
+          <h3>Tesla-Themed Website</h3>
+          <p>A Tesla concept website with a hero section, contact form, services, and custom footer.</p>
+          <a href="https://6917137f1f6dd9319bebcbbd--soft-khapse-ac9e7e.netlify.app/" class="btn-outline" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="cv-section">
+      <h1>My <span class="highlight">Curriculum Vitae</span></h1>
+      <div class="cv-content">
+        <div class="cv-block">
+          <h2>Personal Information</h2>
+          <p><strong>Full Name:</strong> Moeketsi Isaac Rooi Motloung</p>
+          <p><strong>Phone:</strong> 083 765 0991</p>
+          <p><strong>Email:</strong> mahxmotloung438@gmail.com</p>
+          <p><strong>Location:</strong> George, Western Cape, South Africa</p>
+        </div>
+        <div class="cv-block">
+          <h2>Education</h2>
+          <p><strong>WeThinkCode</strong> - Software Engineering (Current)</p>
+          <p><strong>Nelson Mandela University</strong> – Tourism Management</p>
+          <p><strong>Sedibeng TVET College</strong> – Tourism Management N4</p>
+          <p><strong>Seotlong Agriculture & Hotel School</strong> – Grade 8–12</p>
+        </div>
+        <div class="cv-block">
+          <h2>Work Experience</h2>
+          <p><strong>Sales Associate</strong> – Sportscene (TFG), George (2023–Present)</p>
+          <p><strong>Assistant Chef</strong> – Seotlong Agriculture & Hotel School</p>
+          <p><strong>Lecturer Assistant</strong> – Part-time (Since 2024)</p>
+        </div>
+        <div class="cv-block">
+          <h2>Certifications & Skills</h2>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Cybersecurity (Zaio Certified)</li>
+            <li>Responsive Web Design</li>
+            <li>IT Support & Web Development Fundamentals</li>
+            <li>Teamwork & Customer Service</li>
+          </ul>
+        </div>
+        <div class="cv-block">
+          <h2>Languages</h2>
+          <p>English (Fluent), Sesotho (Native)</p>
+        </div>
+        <div class="cv-block full-width">
+          <a href="Moeketsi-Motloung-CV.pdf" class="btn" download>Download PDF Version</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h1>Contact <span class="highlight">Me</span></h1>
+      <p class="contact-description">I'd love to connect with you! Whether you have a project in mind or just want to say hi, feel free to drop a message.</p>
+      <div class="contact-container">
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> George, Western Cape, South Africa</p>
+          <p><i class="fas fa-envelope"></i> mahxmotloung438@gmail.com</p>
+          <p><i class="fas fa-phone"></i> 081 040 0624</p>
+          <div class="socials">
+            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" action="assets/php/send_mail.php" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <section class="footer-section">
+    <div class="cta-banner">
+      <div class="cta-left">
+        <h2>Have a project<br>in mind?</h2>
+      </div>
+      <div class="cta-right">
+        <p>I'm available for freelance work. Let's connect and build something amazing together.</p>
+        <a href="#contact" class="btn-primary">Let's Talk</a>
       </div>
     </div>
-    <div class="image">
-      <img src="Rooi.jpeg" alt="Moeketsi Motloung" />
-    </div>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-col brand-col">
+          <div class="logo">
+            MOEKETSI <span class="highlight">MOTLOUNG</span>
+          </div>
+          <p class="brand-desc">Aspiring Web Designer and Developer passionate about creating meaningful and user-focused digital experiences.</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-circle"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/moeketsi200" target="_blank" rel="noopener noreferrer" class="social-circle"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-circle"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4>Useful Links</h4>
+          <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4>My Services</h4>
+          <ul>
+            <li>Web Design</li>
+            <li>Frontend Development</li>
+            <li>Responsive Layouts</li>
+            <li>Website Maintenance</li>
+            <li>Portfolio Development</li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4>Contact Info</h4>
+          <ul class="contact-info">
+            <li><i class="fas fa-envelope"></i> mahxmotloung438@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +27 83 765 0991</li>
+            <li><i class="fas fa-map-marker-alt"></i> George, Western Cape,<br>South Africa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright-pill">
+          © 2025 Moeketsi Motloung. Designed by Moeketsi Rooi.
+        </div>
+      </div>
+    </footer>
   </section>
-<footer>
-  <div class="footer-content">
-    <div>
-      <h3>Contact Info</h3>
-      <p>George, Western Cape, South Africa</p>
-      <p><strong>Phone:</strong> +27 83 765 0991</p>
-      <p><strong>Email:</strong> mahxmotloung438@gmail.com</p>
-    </div>
 
-    <div>
-      <h3>Useful Links</h3>
-      <ul>
-
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="about.html">About</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="project.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-
-      </ul>
-    </div>
-
-    <div>
-      <h3>My Services</h3>
-      <ul>
-        <li>Web Design</li>
-        <li>Frontend Development</li>
-        <li>Responsive Layouts</li>
-        <li>Website Maintenance</li>
-        <li>Portfolio Development</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="bottom">
-    <p>© 2025 Moeketsi Isaac Rooi Motloung. All Rights Reserved.</p>
-    <p>Designed by <strong>Moeketsi Rooi</strong></p>
-  </div>
-</footer>
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/particles.js"></script>
 </body>
 </html>

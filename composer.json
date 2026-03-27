@@ -1,0 +1,8 @@
+{
+    "name": "katlego/bio-web-app",
+    "description": "Personal Portfolio Website",
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

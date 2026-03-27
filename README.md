@@ -3,30 +3,22 @@ Personal Portfolio Website
 This is a personal portfolio website showcasing my profile, skills, projects, and contact information. The website is built using HTML, CSS, JavaScript, and PHP, and includes responsive design and interactive features.
 
 📁 Project Structure
-├── index.html          # Main landing page
-├── about.html          # About me page
-├── skills.html         # Skills page
-├── projects.html       # Projects showcase
-├── contact.html        # Contact page
-├── cv.html             # CV / Resume page
-├── style.css           # Main stylesheet
-├── script.js           # JavaScript functionality
-├── send_mail.php       # PHP script for contact form
-├── Images:
-│   ├── Iphone.jpg
-│   ├── Tesla.jpg
-│   ├── clock.jpg
-│   ├── zoo.jpg
-│   ├── Moeketsi.jpeg
-│   ├── Motloung.jpeg
-│   ├── Rooi.jpeg
+├── index.html          # Main single-page site
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   ├── images/
+│   │   └── ... (all image files)
+│   └── php/
+│       └── send_mail.php
 └── README.md
 
 ✨ Features
 
 Responsive and modern UI design
-
-Multiple pages (About, Skills, Projects, CV, Contact)
+Single-page layout with sections for About, Skills, Projects, CV, and Contact
 
 JavaScript-powered interactivity
 
