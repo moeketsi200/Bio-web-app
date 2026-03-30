@@ -5,88 +5,81 @@ Welcome to my personal portfolio website! This platform showcases my journey as 
 ### ✨ Live Demo
 https://moeketsi200.github.io/Bio-web-app/
 
-📁 Project Structure
-├── index.html          # Main single-page site
+```
+.
 ├── assets/
 │   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
+│   │   └── style.css         # Main stylesheet
 │   ├── images/
-│   │   └── ... (all image files)
+│   │   └── ...               # All image files
+│   ├── js/
+│   │   ├── particles.js      # Background particle animation
+│   │   └── script.js         # Main interactivity script
 │   └── php/
-│       └── send_mail.php
+│       └── send_mail.php     # PHP mailer script
+├── vendor/                   # Composer dependencies (PHPMailer, DotEnv)
+├── .env.example              # Example environment file for SMTP settings
+├── .gitignore
+├── composer.json             # PHP dependencies
+├── index.html                # Main single-page site
 └── README.md
+```
 
-### 🚀 Features
+## ✨ Features
 
-*   **Modern & Responsive Design:** Optimized for various devices and screen sizes.
-*   **Single-Page Navigation:** Smooth scrolling and active link highlighting for easy navigation between sections (Home, About, Skills, Projects, CV, Contact).
-*   **Interactive Elements:** Dynamic text slideshow, scroll-reveal animations for skill cards, and a captivating particle background.
-*   **Project Showcase:** Dedicated section to display key projects with images and descriptions.
-*   **Detailed CV Section:** An overview of education, work experience, and certifications.
-*   **Functional Contact Form:** Allows visitors to send messages directly.
+-   **Modern UI:** A sleek, dark-themed design with a dynamic particle background.
+-   **Single-Page Layout:** Smooth navigation between Home, About, Skills, Projects, CV, and Contact sections.
+-   **Interactive Elements:** Includes a text slideshow, scroll-triggered animations, and a skills ticker.
+-   **PHP Contact Form:** A secure contact form using PHPMailer and SMTP authentication to send emails.
+-   **Responsive Design:** Fully responsive layout that adapts to all screen sizes, from mobile to desktop.
 
-### 🛠️ Technologies Used
+## 🛠️ Technologies Used
 
-*   **Frontend:**
-    *   **HTML5:** Semantic structure and content organization.
-    *   **CSS3:** Styling, responsive layouts (Flexbox, Grid), animations, and modern UI effects.
-    *   **JavaScript:** Interactivity, dynamic content, slideshow, scroll animations, and particle background.
-    *   **React:** Mentioned in skills, indicating familiarity with component-based UI development.
-*   **Backend:**
-    *   **PHP:** Handles the contact form submission and email sending using PHPMailer.
-    *   **Composer:** Manages PHP dependencies (PHPMailer, Dotenv).
-    *   **.env:** For secure environment variable management (e.g., SMTP credentials).
-*   **Tools & Concepts:**
-    *   **Git & GitHub:** Version control and collaborative development.
-    *   **Responsive Web Design:** Ensuring optimal viewing across devices.
-    *   **Web Design Principles:** Focus on user experience and aesthetics.
+-   **Frontend:** HTML5, CSS3, JavaScript (ES6)
+-   **Backend:** PHP
+-   **Libraries:**
+    -   [PHPMailer](https://github.com/PHPMailer/PHPMailer): For sending emails via SMTP.
+    -   [phpdotenv](https://github.com/vlucas/phpdotenv): For managing environment variables.
+-   **Tooling:**
+    -   [Composer](https://getcomposer.org/): For PHP package management.
+    -   Git & GitHub: For version control.
 
-### 🏃 How to Run the Project Locally
+## 🚀 How to Run the Project
+
+To run this project locally, you will need a local server environment with PHP and Composer installed (like XAMPP, MAMP, or a native LAMP/LEMP stack).
 
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/moeketsi200/Bio-web-app.git
     cd Bio-web-app
     ```
-2.  **Set up PHP dependencies (for contact form):**
-    *   Ensure you have Composer installed.
-    *   From the project root, run:
-        ```bash
-        composer install
-        ```
-3.  **Configure Environment Variables (for email sending):**
-    *   Create a `.env` file in the project root (`Bio-web-app/.env`).
-    *   Add your SMTP server details to this file (e.g., from Gmail, SendGrid, etc.):
-        ```
-        SMTP_HOST="your.smtp.host"
-        SMTP_USER="your_email@example.com"
-        SMTP_PASS="your_email_password_or_app_password"
-        SMTP_PORT="587" # or 465 for SMTPS
-        ```
-    *   *Note: For Gmail, you'll likely need to generate an App Password as direct password access is often blocked.*
-4.  **Serve the project with a PHP-enabled web server:**
-    *   **Option A: PHP's built-in server (easiest for development):**
-        ```bash
-        php -S localhost:8000
-        ```
-    *   **Option B: XAMPP, MAMP, WAMP, or Apache:**
-        *   Place the `Bio-web-app` folder in your web server's document root (e.g., `htdocs` for XAMPP, `www` for MAMP).
-        *   Start your Apache (and MySQL if applicable) services.
-        *   Access in your browser at `http://localhost/Bio-web-app/` (or similar, depending on your server setup).
-5.  **Open your browser:** Navigate to `http://localhost:8000` (for Option A) or `http://localhost/Bio-web-app/` (for Option B) to view the website.
 
+2.  **Install PHP dependencies:**
+    ```bash
+    composer install
+    ```
 
-⚠️ The contact form requires PHP and will not work if opened directly without a server.
+3.  **Configure Environment Variables:**
+    -   Rename the `.env.example` file to `.env`.
+    -   Open the `.env` file and add your SMTP server credentials. This is required for the contact form to work.
+    ```
+    SMTP_HOST="smtp.example.com"
+    SMTP_USER="your_email@example.com"
+    SMTP_PASS="your_app_password"
+    SMTP_PORT=465
+    ```
 
-### 📧 Contact
+4.  **Run on a local server:**
+    -   Place the project folder inside your web server's root directory (e.g., `htdocs` for XAMPP).
+    -   Start your Apache and MySQL services.
+    -   Open your browser and navigate to `http://localhost/Bio-web-app/` (or your folder name).
 
-You can reach me through the contact form on the website or via the details provided in my CV page.
-*   **Email:** mahxmotloung438@gmail.com
-*   **LinkedIn:** https://www.linkedin.com/in/moeketsi-isaac-rooi-motloung-02bb07231
-*   **GitHub:** https://github.com/moeketsi200
+> **⚠️ Note:** The contact form requires a properly configured `.env` file and will not work if the site is opened directly as a file (`file:///...`).
 
-### 📄 License
+## 📬 Contact
 
-This project is intended for personal and educational use, showcasing my skills and projects.
+You can reach me through the contact form on the website or via the details provided in the CV section.
+
+## 📄 License
+
+This project is for personal and educational use.
