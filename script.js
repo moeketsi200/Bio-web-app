@@ -1,5 +1,5 @@
 const textElement = document.querySelector('.slideshow-text');
-const words = ['Aspiring Web Designer', 'Developer'];
+const words = ['Software Engineer', 'Web Designer', 'UI/UX Designer'];
 let index = 0;
 
 setInterval(() => {

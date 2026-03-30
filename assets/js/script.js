@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Slideshow text
   const textElement = document.querySelector('.slideshow-text');
   if (textElement) {
-    const words = ['Aspiring Web Designer', 'Developer'];
+    const words = ['Software Engineer', 'UI/UX Designer'];
     let index = 0;
 
     setInterval(() => {
